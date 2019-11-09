@@ -182,6 +182,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // add this
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Jenssegers\Mongodb\Auth\PasswordResetServiceProvider::class,
+
     ],
 
     /*
@@ -235,6 +239,8 @@ return [
         'FormField' => Luthfi\FormField\FormFieldFacade::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
+
+        'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
     ],
 
 ];
