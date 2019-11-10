@@ -77,7 +77,7 @@ class TransactionsController extends Controller
 
     public function getProduct($invoice)
     {
-        $data = Transaction::where("invoice", $invoice)->get();
+        $data = Transaction::where("invoice", 'LIKE', '%'.$invoice.'%')->get();
 
         $response = [
             'data' => $data

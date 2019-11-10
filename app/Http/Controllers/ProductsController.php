@@ -95,7 +95,7 @@ class ProductsController extends Controller
 
     public function getProduct($barcode)
     {
-        $data = Product::where("barcode", $barcode)->get();
+        $data = Product::where("barcode", 'LIKE', '%'.$barcode.'%')->get();
 
         $response = [
             'data' => $data
