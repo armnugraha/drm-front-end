@@ -93,6 +93,17 @@ class ProductsController extends Controller
         // return $pdf->stream('price-list.pdf');
     }
 
+    public function getAllProduct()
+    {
+        $data = Product::get();
+
+        $response = [
+            'data' => $data
+        ];
+
+        return response()->json($response);
+    }
+
     public function getProduct($barcode)
     {
         $data = Product::where("barcode", 'LIKE', '%'.$barcode.'%')->get();
