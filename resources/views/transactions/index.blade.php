@@ -34,7 +34,7 @@
                     <th>{{ trans('app.table_no') }}</th>
                     <th>{{ trans('transaction.invoice_no') }}</th>
                     <th>{{ trans('app.date') }}</th>
-                    <th>{{ trans('transaction.customer') }}</th>
+                    {{-- <th>{{ trans('transaction.customer') }}</th> --}}
                     <th>{{ trans('transaction.items_count') }}</th>
                     <th class="text-right">{{ trans('transaction.total') }}</th>
                     <th class="text-center">{{ trans('app.action') }}</th>
@@ -44,17 +44,17 @@
                 @forelse($transactions as $key => $transaction)
                 <tr>
                     <td>{{ $transactions->firstItem() + $key }}</td>
-                    <td>{{ $transaction->invoice_no }}</td>
+                    <td>{{ $transaction->invoice }}</td>
                     <td>{{ $transaction->created_at->format('Y-m-d') }}</td>
-                    <td>
+                    {{-- <td>
                         {{ $transaction->customer['name'] }}
                         {{ $transaction->customer['phone'] ? '(' . $transaction->customer['phone'] . ')' : '' }}
-                    </td>
+                    </td> --}}
                     <td>{{ $transaction->items_count }}</td>
                     <td class="text-right">{{ format_rp($transaction->total) }}</td>
                     <td class="text-center">
-                        {{ link_to_route('transactions.show', trans('app.show'), $transaction->invoice_no) }} |
-                        {{ link_to_route('transactions.receipt', trans('app.print'), $transaction->invoice_no) }}
+                        {{ link_to_route('transactions.show', trans('app.show'), $transaction->invoice) }} |
+                        {{ link_to_route('transactions.receipt', trans('app.print'), $transaction->invoice) }}
                     </td>
                 </tr>
                 @empty
