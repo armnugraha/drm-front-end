@@ -14,11 +14,10 @@ class TransactionsController extends Controller
         $q = $request->get('q');
         $date = $request->get('date');
 
-        $transactions = Transaction::orderBy('invoice_no', 'desc')
+        $transactions = Transaction::orderBy('id', 'desc')
             ->where(function ($query) use ($q, $date) {
                 if ($q) {
-                    $query->where('invoice_no', 'like', '%'.$q.'%');
-                    $query->orWhere('customer', 'like', '%'.$q.'%');
+                    $query->where('invoice', 'like', '%'.$q.'%');
                 }
                 if ($date) {
                     $query->where('created_at', 'like', $date.'%');
