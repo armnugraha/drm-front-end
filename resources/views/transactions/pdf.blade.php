@@ -1,6 +1,6 @@
 @extends('layouts.pdf')
 
-@section('title', $transaction->invoice_no.' - '.trans('transaction.invoice_print'))
+@section('title', $transaction->invoice.' - '.trans('transaction.invoice_print'))
 
 @section('content')
 
@@ -16,7 +16,7 @@
                         <tr>
                             <td style="width:90px">{{ trans('transaction.invoice_no') }}</td>
                             <td>:</td>
-                            <td class="strong">{{ $transaction->invoice_no }}</td>
+                            <td class="strong">{{ $transaction->invoice }}</td>
                             <td class="text-right">{{ $transaction->created_at->format('d/m/Y') }}</td>
                         </tr>
                         <tr><td>{{ trans('transaction.cashier') }}</td><td>:</td><td>{{ $transaction->user->name }}</td><td class="text-right">{{ $transaction->created_at->format('H:i:s') }}</td></tr>
