@@ -16,7 +16,7 @@ class Transaction extends Model
 
     public function getRouteKeyName()
     {
-        return 'invoice_no';
+        return 'invoice';
     }
 
     public function getItemsCountAttribute($value)
