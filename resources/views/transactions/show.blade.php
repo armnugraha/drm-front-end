@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', $transaction->invoice_no . ' - ' . trans('transaction.detail'))
+@section('title', $transaction->invoice . ' - ' . trans('transaction.detail'))
 
 @section('content')
 <div class="pull-right">
-    {{ link_to_route('transactions.pdf', trans('transaction.invoice_pdf'), [$transaction->invoice_no], ['class' => 'btn btn-default']) }}
-    {{ link_to_route('transactions.receipt', trans('transaction.invoice_print'), [$transaction->invoice_no], ['class' => 'btn btn-default']) }}
+    {{ link_to_route('transactions.pdf', trans('transaction.invoice_pdf'), [$transaction->invoice], ['class' => 'btn btn-default']) }}
+    {{ link_to_route('transactions.receipt', trans('transaction.invoice_print'), [$transaction->invoice], ['class' => 'btn btn-default']) }}
 </div>
-<h3 class="page-header">{{ $transaction->invoice_no }} <small>{{ trans('transaction.detail') }}</small></h3>
+<h3 class="page-header">{{ $transaction->invoice }} <small>{{ trans('transaction.detail') }}</small></h3>
 <div class="row">
     <div class="col-sm-4">
         <div class="panel panel-default">
@@ -15,7 +15,7 @@
             <div class="panel-body">
                 <table class="table table-condensed">
                     <tbody>
-                        <tr><td>{{ trans('transaction.invoice_no') }}</td><td class="text-primary strong">{{ $transaction->invoice_no }}</td></tr>
+                        <tr><td>{{ trans('transaction.invoice_no') }}</td><td class="text-primary strong">{{ $transaction->invoice }}</td></tr>
                         <tr><td>{{ trans('app.date') }}</td><td>{{ $transaction->created_at->format('Y-m-d') }}</td></tr>
                         <tr><td>{{ trans('transaction.customer_name') }}</td><td>{{ $transaction->customer['name'] }}</td></tr>
                         <tr><td>{{ trans('transaction.customer_phone') }}</td><td>{{ $transaction->customer['phone'] }}</td></tr>
