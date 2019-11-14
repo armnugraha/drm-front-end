@@ -37,8 +37,14 @@
             <td>: {{ $transaction->user->name }}</td>
             <td class="text-right">{{ $transaction->created_at->format('H:i:s') }}</td>
         </tr>
-        <tr><td>{{ trans('transaction.customer') }}</td><td colspan="2">: {{ $transaction->customer['name'] }}</td></tr>
-        <tr><td>{{ trans('transaction.customer_phone') }}</td><td colspan="2">: {{ $transaction->customer['phone'] }}</td></tr>
+        <tr><td>{{ trans('transaction.customer') }}</td><td colspan="2">: 
+            {{-- {{ $transaction->customer['name'] }} --}}
+            Admin
+        </td></tr>
+        <tr><td>{{ trans('transaction.customer_phone') }}</td><td colspan="2">: 
+            {{-- {{ $transaction->customer['phone'] }} --}}
+            00000
+        </td></tr>
         <tr><th colspan="3" class="text-left">{{ trans('transaction.items') }}</th></tr>
         <tr>
             <th class="border-bottom">{{ trans('product.item_qty') }}</th>
