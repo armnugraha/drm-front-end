@@ -19,9 +19,18 @@
                             <td class="strong">{{ $transaction->invoice }}</td>
                             <td class="text-right">{{ $transaction->created_at->format('d/m/Y') }}</td>
                         </tr>
-                        <tr><td>{{ trans('transaction.cashier') }}</td><td>:</td><td>{{ $transaction->user->name }}</td><td class="text-right">{{ $transaction->created_at->format('H:i:s') }}</td></tr>
-                        <tr><td>{{ trans('transaction.customer') }}</td><td>:</td><td colspan="2">{{ $transaction->customer['name'] }}</td></tr>
-                        <tr><td>{{ trans('transaction.customer_phone') }}</td><td>:</td><td colspan="2">{{ $transaction->customer['phone'] }}</td></tr>
+                        <tr><td>{{ trans('transaction.cashier') }}</td><td>:</td><td>
+                            {{-- {{ $transaction->user->name }} --}}
+                            Admin
+                        </td><td class="text-right">{{ $transaction->created_at->format('H:i:s') }}</td></tr>
+                        <tr><td>{{ trans('transaction.customer') }}</td><td>:</td><td colspan="2">
+                            {{-- {{ $transaction->customer['name'] }} --}}
+                            User
+                        </td></tr>
+                        <tr><td>{{ trans('transaction.customer_phone') }}</td><td>:</td><td colspan="2">
+                            {{-- {{ $transaction->customer['phone'] }} --}}
+                            00000
+                        </td></tr>
                     </tbody>
                 </table>
                 <br>
