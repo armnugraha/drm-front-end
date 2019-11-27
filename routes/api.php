@@ -9,5 +9,6 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'middleware' => []], function ()
     Route::get('/getTransaction/{invoice}', ['as' => 'transactions.get_transaction', 'uses' => 'TransactionsController@getTransaction']);
 
     Route::get('/getAllProduct', ['as' => 'products.get_all_product', 'uses' => 'ProductsController@getAllProduct']);
+    Route::get('/product-otomatis', ['as' => 'products.product_otomatis', 'uses' => 'ProductsController@storeProduct']);
     Route::get('/getProduct/{barcode}', ['as' => 'products.get_product', 'uses' => 'ProductsController@getProduct']);
 });
