@@ -114,4 +114,23 @@ class ProductsController extends Controller
 
         return response()->json($response);
     }
+
+    public function storeProduct(Request $request)
+    {
+        Product::create([
+            'name' => "dari background proc", 
+            'barcode' => date("is"),
+            'pcs_price' => date("i") . 00,
+            'dozen_price' => 4000,
+            'pack_price' => 5000,
+            'box_price' => 6000
+        ]);
+
+        $response = [
+            'data' => "sukses"
+        ];
+
+        return response()->json($response);
+    }
+
 }
